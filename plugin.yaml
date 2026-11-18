@@ -1,0 +1,23 @@
+name: lenz
+version: "1.0.0"
+manifest_version: 2
+api_version: 1
+requires_hermes: ">=0.23.2"
+license: MIT
+description: "On-demand fact checking with the Lenz API, configurable per-request spending limits, and explicit async job status."
+author: "cygnostik"
+requires_env:
+  - LENZ_API_KEY
+provides_tools:
+  - lenz_policy
+  - lenz_extract
+  - lenz_assess
+  - lenz_verify
+  - lenz_review
+  - lenz_status
+  - lenz_usage
+config_schema:
+  mode:
+    type: str
+    default: normal
+    description: "Verification policy: heavy, normal, moderate, light, or critical-only. Caps are per request, not a total budget."
