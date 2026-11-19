@@ -16,14 +16,14 @@ Expect a **one-credit maximum** and **nothing sent**. The estimate is local. It 
 
 Lenz is a native Hermes Agent plugin, not an MCP server. It requires Hermes **0.23.2 or newer** and has no extra plugin dependencies. It was tested on macOS with an isolated Hermes profile.
 
-Install the [reviewed release](https://github.com/cygnostik/hermes-lenz/releases/tag/v1.1.0):
+Install from the public repository, or see [Releases](https://github.com/cygnostik/hermes-lenz/releases) for an exact commit to pin:
 
 ```sh
-hermes plugins install https://github.com/cygnostik/hermes-lenz --ref v1.1.0 --no-enable
+hermes plugins install https://github.com/cygnostik/hermes-lenz --no-enable
 hermes plugins enable lenz
 ```
 
-Read the custom-source trust prompt. For a named profile, use `hermes -p NAME` for both commands. Start a new session in that profile after enabling the plugin.
+Read the custom-source trust prompt. To pin a revision, add `--ref` followed by the full 40-character commit SHA, not a version tag. For a named profile, use `hermes -p NAME` for both commands. Start a new session in that profile after enabling the plugin.
 
 1. Create your own key at [Lenz API credentials](https://lenz.io/api-credentials).
 2. In Hermes Desktop, open **Settings → Plugins → Lenz**, enter it in **Lenz API key**, and click **Save settings**. Alternatively, use the installer’s masked prompt in your own interactive terminal. If the terminal warns that input may be echoed, skip the prompt. Never paste the key into chat or enter it as a command argument.
