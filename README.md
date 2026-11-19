@@ -1,6 +1,6 @@
 # Lenz for Hermes
 
-**Fact-check the claims you’re about to publish.** Get a quick read on dates, figures, and assertions, or ask Lenz to investigate a disputed claim against sources. Hermes shows you the maximum credit cost before sending the selected material.
+Hand Hermes a draft and ask it to flag the numbers, dates, and quotes that need checking. Use Lenz to check a few claims, investigate a disputed one, or review the draft and its citations. You see the most a check can cost before you decide what to send.
 
 ![Lenz for Hermes with an installed tool preview showing one credit maximum and nothing sent](docs/media/readme-hero.png)
 
@@ -31,18 +31,18 @@ Read the custom-source trust prompt. To pin a revision, add `--ref` followed by 
 
 ![Hermes Desktop’s Lenz settings: an empty masked key field and a check-depth selector](docs/media/desktop-settings.png)
 
-## Pick the smallest check that answers your question
+## What you can check
 
 | Ask Hermes | Maximum | What you get |
 | --- | ---: | --- |
-| “Extract the checkable claims from this paragraph.” | 0 credits | A list of claims, not verdicts. Daily limits apply. |
-| “Quick-check these figures.” | 1 per claim | An initial verdict and confidence. Searched pages are not verified citations. |
-| “Investigate this disputed claim against sources.” | 6 at low depth or 11 at standard | One assessment plus at most one deep check. |
-| “Review this draft and its citations.” | 32 in Normal mode | A bounded review with assessments, conditional deeper checks, and citation checks. |
+| “Which statements in this paragraph can I fact-check?” | 0 credits | A list of claims. Daily limits apply. |
+| “Check the dates and dollar amounts in this draft.” | 1 per claim | A first verdict and confidence rating. A page found in search isn't a verified citation. |
+| “Does the original study back up this claim?” | 6 at low depth or 11 at standard | An initial assessment and, when needed, one deeper check. |
+| “Review this draft and flag citations that don’t support the claims.” | 32 in Normal mode | Claim checks, deeper checks where warranted, and citation checks. |
 
-For any submission, review the selected text or URL, destination, and maximum, then tell Hermes whether to send it. Previews expire after 15 minutes. A changed request needs a new preview. The plugin matches the request to the preview and amount; agreement happens in chat, not through a separate approval dialog.
+Check the text or URL Hermes plans to send to Lenz and the maximum cost, then say in chat whether to go ahead. If you change the request or wait more than 15 minutes, ask for a new preview. The plugin checks that the request and amount match the preview.
 
-For a queued review, ask Hermes to check the same job later rather than submit it again. Read the sources and any failed or omitted rows. No public record is not proof a claim is false.
+If a review is still running, ask Hermes to check its status instead of submitting it again. Read the sources and look for claims the review skipped or couldn't check. If Lenz finds no public record, that doesn't prove the claim is false.
 
 ### Draft limits
 
@@ -60,7 +60,7 @@ Choose **Check depth and draft limits** in Lenz’s plugin settings. The maximum
 
 Lenz for Hermes caps **reservations in this profile** at 500 credits per Lenz reset period. It does not grant credits or change your plan. Before sending content, the plugin checks the connected account’s balance, reset date, and prices. A lower balance can tighten the cap for the rest of that period. The cap does not cover spending on the Lenz website, through MCP, or in other profiles.
 
-For example, if 500 credits are available, a conservative allocation is **300 quick claims + 5 Normal draft reviews + 4 Moderate draft reviews** across the period. That is an allocation at maximum cost, not a guarantee of completed checks. With 100 credits available, one Normal review leaves up to 68 for quick checks in that allocation. Check your own allowance with `lenz_usage` or see [Lenz plans](https://lenz.io/plans). Hermes model usage is separate.
+With 500 credits available, you could budget for **300 quick claim checks, five Normal draft reviews, and four Moderate draft reviews** at their maximum costs. With 100 credits, set aside 32 for one Normal review and up to 68 for quick checks. Ask Hermes for your Lenz balance or see [Lenz plans](https://lenz.io/plans). Hermes model usage is separate.
 
 The full quoted maximum remains reserved on an ambiguous submission, even if no bill has arrived. Check Lenz activity before starting another request. The ledger survives restarts and reinstallations in the same profile. It opens a new period only after the old reset passes and Lenz reports a later reset.
 
