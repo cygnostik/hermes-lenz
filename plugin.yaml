@@ -1,13 +1,16 @@
 name: lenz
-version: "1.0.0"
+version: "1.1.0"
 manifest_version: 2
 api_version: 1
 requires_hermes: ">=0.23.2"
 license: MIT
-description: "On-demand fact checking with the Lenz API, configurable per-request spending limits, and explicit async job status."
+description: "Preview a fact check, screen claims or review a draft with Lenz. Track the shared balance and reserve at most 500 credits per profile per Lenz month."
 author: "cygnostik"
 requires_env:
-  - LENZ_API_KEY
+  - name: LENZ_API_KEY
+    secret: true
+    description: Your own Lenz key for this Hermes profile
+    url: https://lenz.io/api-credentials
 provides_tools:
   - lenz_policy
   - lenz_extract
@@ -17,7 +20,14 @@ provides_tools:
   - lenz_status
   - lenz_usage
 config_schema:
+  api_key:
+    type: secret
+    env: LENZ_API_KEY
+    label: Lenz API key
+    description: Create a key at lenz.io/api-credentials. A local preview needs no key.
   mode:
     type: str
     default: normal
-    description: "Verification policy: heavy, normal, moderate, light, or critical-only. Caps are per request, not a total budget."
+    label: Check depth and draft limits
+    choices: [light, moderate, normal, heavy, critical-only]
+    description: "Maximum per draft: light 2 (quick only), moderate 10, normal 32, heavy 74, critical-only 13. All share the same monthly budget."
